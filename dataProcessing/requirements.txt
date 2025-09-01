@@ -1,0 +1,7 @@
+cfgrib
+xarray
+zarr
+dask
+cfgrib
+zarr
+ipykernel
