@@ -30,6 +30,10 @@ python3 -m venv .venv
 pip install -r dataProcessing/requirements.txt
 ```
 
+## The Complete Idea
+![Complete Idea](resources/idea.png)
+
+
 ## Data Download and Processing Demo
 For this demo we’ll use a pre-packaged sample forecast (2022-01-01) provided in gfs.20220101.zip. It can be completed on your local device, and will provide insight into how this demo can then be made massively parallel from a single date. 
 
