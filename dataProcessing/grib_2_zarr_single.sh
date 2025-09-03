@@ -43,10 +43,11 @@
 # Memory Utilized: 2.94 GB
 # Memory Efficiency: 81.79% of 3.59 GB
 # Nearing the threshold of Memory allocated 
+# Work has around 1.79 GB per cpu
 # -----------------------------------------------------------------------------
 
 #SBATCH --account=<projectID>
-#SBATCH --partition=debug
+#SBATCH --partition=work
 #SBATCH --job-name=single-grib-2-zarr-incr-mem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
