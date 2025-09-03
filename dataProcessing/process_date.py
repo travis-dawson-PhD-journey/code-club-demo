@@ -45,7 +45,7 @@ def preprocess_slice_flip(ds: xr.Dataset) -> xr.Dataset:
         xr.Dataset: The dataset trimmed to the specified lat/lon region,
         with latitude in ascending order.
     """
-    ds = ds.isel(latitude=slice(None, None, -1))
+    ds = ds.isel(latitude=slice(None, None, -1))  # Order latitude from South to North (works with matplitlob.pyplot visualization)
 
     # Slice the gridded region based on coordinate values
     ds = ds.sel(latitude=slice(-70, 0), longitude=slice(-60, 135))
@@ -86,8 +86,7 @@ def flatten_sequence_vars(ds: xr.Dataset, vars_to_flatten=SEQUENCE_VARS) -> xr.D
                 out[f"{var}_{i}"] = out[var].isel(orderedSequenceData=i)   # Create new filed var_i equal to the orderedSequenceData=i
             out = out.drop_vars(var)  # Remove the variable
 
-    # TODO From here
-    if ordered_seq_dim in out.dims:
+    if ordered_seq_dim in out.dims:  # Still a dimension
         still_uses = any(ordered_seq_dim in out[v].dims for v in out.data_vars)  # Any variables still use the dim
         if not still_uses:  # No variable uses it
             out = out.drop_dims(ordered_seq_dim)  # Drop dimension

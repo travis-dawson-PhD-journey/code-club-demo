@@ -45,6 +45,7 @@
 # Job Wall-clock time: 00:00:56
 # Memory Utilized: 1.73 GB
 # Memory Efficiency: 47.85% of 3.61 GB
+# Copy has around 3.6 MB per copy CPU 
 # -----------------------------------------------------------------------------
 
 #SBATCH --account=<accountID>
